@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://images/level_3.png" type="Texture" id=1]
+[ext_resource path="res://levels/Sprite_lv3.gd" type="Script" id=2]
+[ext_resource path="res://levels/Sprite2.gd" type="Script" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6.09523, 8 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 24, 44 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="lines" type="Node2D" parent="."]
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 166, 180 )
+scale = Vector2( 0.328125, 0.3125 )
+texture = ExtResource( 4 )
+centered = false
+script = ExtResource( 3 )
+
+[node name="body_P" type="KinematicBody2D" parent="Sprite2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2/body_P"]
+position = Vector2( 33.5237, 33.6 )
+shape = SubResource( 1 )
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2"]
+position = Vector2( -107.211, 20.0871 )
+scale = Vector2( 1.4373, 1.34066 )
+build_mode = 1
+polygon = PoolVector2Array( 132.339, 209.533, 210.959, 209.533, 330.627, 212.516, 332.019, 262.492, 185.216, 262.492, 184.52, 231.91, 131.643, 231.164 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D2"]
+polygon = PoolVector2Array( -17, 288, 36, 292, 35, 332, -30, 334 )
+
+[node name="finish" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="finish"]
+position = Vector2( 179, 502 )
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]
+[connection signal="body_entered" from="finish" to="." method="_on_finish_body_entered"]
