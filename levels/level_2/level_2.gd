@@ -11,4 +11,4 @@ func _on_16_pressed():
 
 
 func _on_sabtu_pressed():
-	get_tree().change_scene("res://levels/level_3.tscn")
+	get_tree().change_scene("res://levels/level_3/level_3.tscn")

@@ -46,4 +46,4 @@ func _on_finish_body_entered(body):
 	var a = body.name
 	print(a)
 	if(a && valid):
-		get_tree().change_scene("res://levels/level_4.tscn")
+		get_tree().change_scene("res://levels/level_4/level_4.tscn")
