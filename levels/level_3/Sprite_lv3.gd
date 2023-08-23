@@ -8,6 +8,13 @@ onready var current_line : Line2D
 var nilai = [true,0,0]
 var valid = true
 
+onready var status_bar = load("res://levels/status_bar.tscn")
+
+func _ready():
+	var c = status_bar.instance()
+	add_child(c)
+	c.set_level(self.name)
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch:
 		hitung(event.position)

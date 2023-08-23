@@ -13,6 +13,7 @@ func _on_play_pressed():
 	button.visible = false
 	animation.play("play_animation")
 	timer.start()
+#	VarNyawa.set_awal()
 
 
 func _on_Timer_timeout():

@@ -1,16 +1,19 @@
 extends Node2D
 
+onready var status_bar = load("res://levels/status_bar.tscn")
+var status
+
 func _ready():
 	var bg = $bg
 	bg.modulate = Color(1,0,0)
 	
-	var a = load("res://levels/Heart_system.gd")
-	var b = a.new()
-	b.Helloworld()
+	status = status_bar.instance()
+	add_child(status)
+	status.set_level(self.name)
 
 func salah():
 	#kurangi hati
-	print("Wrong")
+	status.kurangi_nyawa()
 
 func _on_13_pressed():
 	#benar
@@ -19,11 +22,7 @@ func _on_13_pressed():
 
 func _on_16_pressed():
 	salah()
-
-
 func _on_18_pressed():
 	salah()
-
-
 func _on_11_pressed():
 	salah()
