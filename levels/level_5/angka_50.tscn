@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://images/angka_50.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 190, 78 )
+
+[node name="Sprite" type="Sprite"]
+position = Vector2( 195, 376 )
+scale = Vector2( 0.37, 0.37 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2( 10.8108, 70.2702 )
+shape = SubResource( 1 )
+action = "change_to_6"

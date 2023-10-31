@@ -3,6 +3,8 @@ extends Node2D
 onready var status_bar = load("res://levels/status_bar.tscn")
 var status
 
+signal none
+
 func _ready():
 	var bg = $bg
 	bg.modulate = Color(1,0,0)
@@ -13,7 +15,7 @@ func _ready():
 
 func salah():
 	#kurangi hati
-	status.kurangi_nyawa()
+	emit_signal("none")
 
 func _on_13_pressed():
 	#benar

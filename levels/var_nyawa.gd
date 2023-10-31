@@ -1,6 +1,9 @@
 extends Node
 
-var hati = 0
+onready var hati = Loader.Nyawa
+
+func get_hati():
+	return hati
 
 func set_awal():
 #	errase()
@@ -17,14 +20,14 @@ func refresh(rd):
 func write_data(data):
 	var file = File.new()
 	file.open("res://levels/data.txt",File.WRITE)
-	file.store_32(data)
+	file.store_line(data)
 	file.close()
 	
 func open_data() -> int:
-	var a = 0
+	var a
 	var file = File.new()
 	file.open("res://levels/data.txt",File.READ)
-	a = int(file.get_line())
+	a = file.get_line()
 	return a
 	
 func errase() -> void:

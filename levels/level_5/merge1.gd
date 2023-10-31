@@ -3,6 +3,10 @@ extends Sprite
 var original_position
 var is_dragging = false
 
+signal merge
+
+#hasilnya 19 31
+
 func _ready():
 	original_position = position
 
@@ -23,7 +27,3 @@ func stop_drag():
 func _process(delta):
 	if is_dragging:
 		position = get_viewport().get_mouse_position()
-
-
-func _on_Area2D_area_entered(area):
-	print("masuk")

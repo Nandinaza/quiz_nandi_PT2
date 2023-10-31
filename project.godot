@@ -17,6 +17,7 @@ config/icon="res://images/logo.png"
 [autoload]
 
 VarNyawa="*res://levels/var_nyawa.gd"
+Loader="*res://levels/loader.gd"
 
 [display]
 
@@ -27,6 +28,13 @@ window/stretch/mode="2d"
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+
+[input]
+
+change_to_6={
+"deadzone": 0.5,
+"events": [  ]
+}
 
 [input_devices]
 

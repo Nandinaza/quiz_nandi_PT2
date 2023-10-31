@@ -8,7 +8,7 @@ onready var bg = [
 	preload("res://images/number_of_heart/heart1.png")
 ]
 
-var nyawa = VarNyawa.hati
+var nyawa = 3
 
 func _ready():
 	refresh()
@@ -20,7 +20,6 @@ func kurangi_nyawa():
 	nyawa -= 1
 	print(nyawa)
 	refresh()
-	VarNyawa.refresh(nyawa)
 	
 func refresh():
 	if(nyawa == 3):
