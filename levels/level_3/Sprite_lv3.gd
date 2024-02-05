@@ -1,19 +1,14 @@
 extends Node2D
 
 onready var lines = $lines
+onready var parent = get_parent().get_parent()
+onready var nodes = get_parent()
 
 var pressed := false
 onready var current_line : Line2D
 
 var nilai = [true,0,0]
 var valid = true
-
-onready var status_bar = load("res://levels/status_bar.tscn")
-
-func _ready():
-	var c = status_bar.instance()
-	add_child(c)
-	c.set_level(self.name)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch:
@@ -32,18 +27,17 @@ func hitung(awal):
 	if nilai[0] == true :
 		nilai[1] = awal
 		nilai[0] = !nilai[0]
-		print("a")
 		if(current_line):
 			current_line.queue_free()
 			$Sprite2.position = Vector2(166,180)
 	else :
 		nilai[2] = awal
 		nilai[0] = !nilai[0]
-		print("b")
-			
+		valid = true
 
 
 func _on_Area2D_draw():
+	valid = false
 	print("kena")
 
 func _on_Area2D2_body_entered(body):
@@ -51,6 +45,9 @@ func _on_Area2D2_body_entered(body):
 
 func _on_finish_body_entered(body):
 	var a = body.name
-	print(a)
 	if(a && valid):
-		get_tree().change_scene("res://levels/level_4/level_4.tscn")
+#		parent.change("level3")
+		parent.change("level4")
+		queue_free()
+		#get_tree().change_scene("res://levels/level_4/level_4.tscn")
+

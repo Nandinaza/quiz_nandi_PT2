@@ -14,11 +14,6 @@ config/name="quiz_nandi_chapter_2"
 run/main_scene="res://Main_menu.tscn"
 config/icon="res://images/logo.png"
 
-[autoload]
-
-VarNyawa="*res://levels/var_nyawa.gd"
-Loader="*res://levels/loader.gd"
-
 [display]
 
 window/size/width=360

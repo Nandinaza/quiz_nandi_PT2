@@ -2,6 +2,8 @@ extends Sprite
 
 var original_position
 var is_dragging = false
+var batas = Vector2(80,100)
+var minimal = Vector2(140,450)
 
 signal merge
 
@@ -12,7 +14,8 @@ func _ready():
 
 func _input(event):
 	if event is InputEventScreenTouch:
-		if event.is_pressed() and event.get_index() == 0:
+		print(event.position)
+		if event.is_pressed() and (event.position < batas):
 			start_drag()
 		elif event.is_pressed() == false and event.get_index() == 0:
 			stop_drag()

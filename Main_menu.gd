@@ -18,5 +18,5 @@ func _on_play_pressed():
 
 func _on_Timer_timeout():
 	#change scene
-	get_tree().change_scene("res://levels/level_1/level_1.tscn")
+	get_tree().change_scene("res://Scene_loader.tscn")
 	pass

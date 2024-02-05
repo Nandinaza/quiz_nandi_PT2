@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://levels/status_bar.tscn" type="PackedScene" id=1]
+[ext_resource path="res://levels/Scene_loader.gd" type="Script" id=3]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="scenes" type="Node2D" parent="."]
+
+[node name="status_bar" parent="." instance=ExtResource( 1 )]
