@@ -29,6 +29,8 @@ func _on_ok_button_pressed():
 	if(angka[index] == 16):
 		queue_free()
 		parent.change("level5")
+	else:
+		parent.helloworld()
 		#this is eleven
 		
 		

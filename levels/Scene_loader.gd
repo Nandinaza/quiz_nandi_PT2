@@ -14,6 +14,9 @@ onready var level2 : PackedScene = preload("res://levels/level_2/level_2.tscn")
 onready var level3 : PackedScene = preload("res://levels/level_3/level_3.tscn")
 onready var level4 : PackedScene = preload("res://levels/level_4/level_4.tscn")
 onready var level5 : PackedScene = preload("res://levels/level_5/Level 5.tscn")
+onready var level6 : PackedScene = preload("res://levels/level_6/level_6.tscn")
+onready var level7 : PackedScene = preload("res://levels/level_7/level 7.tscn")
+onready var level8 : PackedScene = preload("res://levels/level_8/level 8.tscn")
 
 
 onready var scn = get_node("scenes")
@@ -37,6 +40,7 @@ func _ready():
 func change(level):
 	$status_bar.set_level(levell)
 	levell += 1
+	
 	if level == "level2":
 		var naw = level2.instance()
 		scn.add_child(naw)
@@ -49,20 +53,19 @@ func change(level):
 	if level == "level5":
 		var naw = level5.instance()
 		scn.add_child(naw)
-
-#func loadss():
-#	var levelsc = levels["level1"]
-#	levelsc.instance()#	
-#	add_child(levelsc)onready var level2 : PackedScene = preload("res://levels/level_2/level_2.tscn")
-
-
-
-
-
-
-
-
-
+	if level == "level6":
+		var naw = level6.instance()
+		scn.add_child(naw)
+	if level == "level7":
+		var naw = level7.instance()
+		scn.add_child(naw)
+	if level == "level8":
+		var naw = level8.instance()
+		scn.add_child(naw)
+		statusbar.add_input_text_8()
+#	if level == "level9":
+#		var naw = level9.instance()
+#		scn.add_child(naw)
 
 
 

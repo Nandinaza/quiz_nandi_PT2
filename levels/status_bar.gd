@@ -18,12 +18,17 @@ func set_level(nilai):
 	level_data.text = "level " + str(nilai)
 	
 func kurangi_nyawa():
-	nyawa -= 0.5
+	nyawa -= 0.1
 	jumhat.text = str(nyawa)
 	if nyawa < 1:
 		get_tree().change_scene("res://Game_over.tscn")
 	print(nyawa)
-#
+
+func add_input_text_8():
+	var block = preload("res://levels/level_8/VBoxContainer.tscn")
+	var a = block.instance()
+	add_child(a)
+	
 func refresh():
 	pass
 #	jumhat.text = str(nyawa)

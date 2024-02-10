@@ -1,3 +1,48 @@
-[gd_scene format=2]
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://images/level6_bg.png" type="Texture" id=1]
+[ext_resource path="res://levels/level_6/GarisMerah.gd" type="Script" id=2]
+[ext_resource path="res://images/garis_merah.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 29, 12 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 50, 20 )
+
+[sub_resource type="RectangleShape2D" id=3]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Area2D" type="Area2D" parent="Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D"]
+position = Vector2( 61, 164 )
+shape = SubResource( 2 )
+
+[node name="GarisMerah" type="Sprite" parent="."]
+position = Vector2( 69, 414 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+script = ExtResource( 2 )
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="GarisMerah"]
+position = Vector2( -44, -14 )
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="GarisMerah"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GarisMerah/Area2D"]
+shape = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="area_entered" from="Sprite/Area2D" to="GarisMerah" method="_on_Area2D_area_entered"]
+[connection signal="pressed" from="GarisMerah/TouchScreenButton" to="GarisMerah" method="_on_TouchScreenButton_pressed"]
+[connection signal="released" from="GarisMerah/TouchScreenButton" to="GarisMerah" method="_on_TouchScreenButton_released"]
+[connection signal="timeout" from="Timer" to="GarisMerah" method="_on_Timer_timeout"]

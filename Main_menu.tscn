@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Main_menu.gd" type="Script" id=1]
 [ext_resource path="res://images/main_menu_1.png" type="Texture" id=2]
 [ext_resource path="res://images/main_menu_2.png" type="Texture" id=3]
 [ext_resource path="res://images/background_polka1.png" type="Texture" id=4]
+[ext_resource path="res://images/about.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 100, 30 )
@@ -29,6 +30,18 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("About:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -99,5 +112,12 @@ anims/RESET = SubResource( 2 )
 anims/play_animation = SubResource( 3 )
 anims/polka1_animation = SubResource( 4 )
 
+[node name="About" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Tween" type="Tween" parent="About"]
+
 [connection signal="pressed" from="botton/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="botton/about" to="." method="_on_about_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

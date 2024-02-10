@@ -36,7 +36,7 @@ centered = false
 script = ExtResource( 3 )
 
 [node name="Area2D" type="Area2D" parent="merge1"]
-position = Vector2( 177.778, 300 )
+position = Vector2( 194.595, 305.405 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="merge1/Area2D"]
 position = Vector2( -7.50774, -163.513 )
@@ -70,3 +70,7 @@ shape = SubResource( 5 )
 [node name="31" type="TouchScreenButton" parent="."]
 
 [connection signal="area_entered" from="merge2/Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="pressed" from="47" to="." method="_on_47_pressed"]
+[connection signal="pressed" from="95" to="." method="_on_95_pressed"]
+[connection signal="pressed" from="19" to="." method="_on_19_pressed"]
+[connection signal="pressed" from="31" to="." method="_on_31_pressed"]
