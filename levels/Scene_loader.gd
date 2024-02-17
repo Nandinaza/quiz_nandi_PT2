@@ -17,7 +17,7 @@ onready var level5 : PackedScene = preload("res://levels/level_5/Level 5.tscn")
 onready var level6 : PackedScene = preload("res://levels/level_6/level_6.tscn")
 onready var level7 : PackedScene = preload("res://levels/level_7/level 7.tscn")
 onready var level8 : PackedScene = preload("res://levels/level_8/level 8.tscn")
-
+onready var level9 : PackedScene = preload("res://levels/level_9/level 9.tscn")
 
 onready var scn = get_node("scenes")
 onready var statusbar = $status_bar
@@ -34,7 +34,7 @@ func _ready():
 	scenes_node = $scenes
 #	$status_bar.load_scene(lev[0])
 	
-	var naw = level1.instance()
+	var naw = level7.instance()
 	scn.add_child(naw)
 
 func change(level):
@@ -63,9 +63,9 @@ func change(level):
 		var naw = level8.instance()
 		scn.add_child(naw)
 		statusbar.add_input_text_8()
-#	if level == "level9":
-#		var naw = level9.instance()
-#		scn.add_child(naw)
+	if level == "level9":
+		var naw = level9.instance()
+		scn.add_child(naw)
 
 
 

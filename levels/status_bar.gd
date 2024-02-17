@@ -9,10 +9,6 @@ var level = 1
 
 func _ready():
 	jumhat.text = str(nyawa)
-	
-func _physics_process(delta):
-#	print(nyawa)
-	pass
 
 func set_level(nilai):
 	level_data.text = "level " + str(nilai)
@@ -25,9 +21,14 @@ func kurangi_nyawa():
 	print(nyawa)
 
 func add_input_text_8():
-	var block = preload("res://levels/level_8/VBoxContainer.tscn")
-	var a = block.instance()
-	add_child(a)
+	if get_child_count() < 4:
+		var block = preload("res://levels/level_8/VBoxContainer.tscn")
+		var a = block.instance()
+		add_child(a)
+	elif get_child_count() == 4:
+		print(get_child_count())
+		set_level(8)
+	
 	
 func refresh():
 	pass

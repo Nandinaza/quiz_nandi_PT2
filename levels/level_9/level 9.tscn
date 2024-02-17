@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://levels/level_9/level 9.gd" type="Script" id=1]
+[ext_resource path="res://images/segitiga_level_9.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 50, 20 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 20, 20 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="83" type="TouchScreenButton" parent="."]
+position = Vector2( 45, 386 )
+shape = SubResource( 1 )
+
+[node name="50" type="TouchScreenButton" parent="."]
+position = Vector2( 216, 386 )
+shape = SubResource( 1 )
+
+[node name="20" type="TouchScreenButton" parent="."]
+position = Vector2( 42, 467 )
+shape = SubResource( 1 )
+
+[node name="76" type="TouchScreenButton" parent="."]
+position = Vector2( 216, 467 )
+shape = SubResource( 1 )
+
+[node name="jawabanbenar" type="TouchScreenButton" parent="."]
+position = Vector2( 137, 126 )
+shape = SubResource( 2 )
+
+[connection signal="pressed" from="83" to="." method="_on_83_pressed"]
+[connection signal="pressed" from="50" to="." method="_on_50_pressed"]
+[connection signal="pressed" from="20" to="." method="_on_20_pressed"]
+[connection signal="pressed" from="76" to="." method="_on_76_pressed"]
+[connection signal="pressed" from="jawabanbenar" to="." method="_on_jawabanbenar_pressed"]

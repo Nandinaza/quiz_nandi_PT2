@@ -3,23 +3,112 @@
 [ext_resource path="res://levels/level_8/VBoxContainer.gd" type="Script" id=1]
 
 [node name="VBoxContainer" type="VBoxContainer"]
-margin_left = 146.0
-margin_top = 344.0
-margin_right = 204.0
-margin_bottom = 392.0
+margin_left = 135.0
+margin_top = 316.0
+margin_right = 228.0
+margin_bottom = 527.0
 script = ExtResource( 1 )
 
-[node name="LineEdit" type="LineEdit" parent="."]
-margin_right = 58.0
-margin_bottom = 24.0
-text = "ooo"
-caret_blink = true
-caret_blink_speed = 0.5
+[node name="Label" type="Label" parent="."]
+margin_right = 93.0
+margin_bottom = 14.0
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_top = 18.0
+margin_right = 93.0
+margin_bottom = 63.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="1" type="Button" parent="HBoxContainer"]
+margin_left = 12.0
+margin_right = 32.0
+margin_bottom = 45.0
+text = "1"
+
+[node name="2" type="Button" parent="HBoxContainer"]
+margin_left = 36.0
+margin_right = 56.0
+margin_bottom = 45.0
+text = "2"
+
+[node name="3" type="Button" parent="HBoxContainer"]
+margin_left = 60.0
+margin_right = 80.0
+margin_bottom = 45.0
+text = "3"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+margin_top = 67.0
+margin_right = 93.0
+margin_bottom = 113.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="4" type="Button" parent="HBoxContainer2"]
+margin_left = 12.0
+margin_right = 32.0
+margin_bottom = 46.0
+text = "4"
+
+[node name="5" type="Button" parent="HBoxContainer2"]
+margin_left = 36.0
+margin_right = 56.0
+margin_bottom = 46.0
+text = "5"
+
+[node name="6" type="Button" parent="HBoxContainer2"]
+margin_left = 60.0
+margin_right = 80.0
+margin_bottom = 46.0
+text = "6"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+margin_top = 117.0
+margin_right = 93.0
+margin_bottom = 163.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="7" type="Button" parent="HBoxContainer3"]
+margin_left = 12.0
+margin_right = 32.0
+margin_bottom = 46.0
+text = "7"
+
+[node name="8" type="Button" parent="HBoxContainer3"]
+margin_left = 36.0
+margin_right = 56.0
+margin_bottom = 46.0
+text = "8"
+
+[node name="9" type="Button" parent="HBoxContainer3"]
+margin_left = 60.0
+margin_right = 80.0
+margin_bottom = 46.0
+text = "9"
 
 [node name="Button" type="Button" parent="."]
-margin_top = 28.0
-margin_right = 58.0
-margin_bottom = 48.0
-text = "cek"
+margin_top = 167.0
+margin_right = 93.0
+margin_bottom = 187.0
+text = "Enter"
 
+[node name="Button2" type="Button" parent="."]
+margin_top = 191.0
+margin_right = 93.0
+margin_bottom = 211.0
+text = "kosong"
+
+[connection signal="pressed" from="HBoxContainer/1" to="." method="_on_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/2" to="." method="_on_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/3" to="." method="_on_3_pressed"]
+[connection signal="pressed" from="HBoxContainer2/4" to="." method="_on_4_pressed"]
+[connection signal="pressed" from="HBoxContainer2/5" to="." method="_on_5_pressed"]
+[connection signal="pressed" from="HBoxContainer2/6" to="." method="_on_6_pressed"]
+[connection signal="pressed" from="HBoxContainer3/7" to="." method="_on_7_pressed"]
+[connection signal="pressed" from="HBoxContainer3/8" to="." method="_on_8_pressed"]
+[connection signal="pressed" from="HBoxContainer3/9" to="." method="_on_9_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
